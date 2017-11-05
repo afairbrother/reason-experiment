@@ -9,11 +9,6 @@ let make = (~message, _children) => {
   render: (_self) =>
     <div className="App">
         <Header />
-      <p className="App-intro">
-        (ReasonReact.stringToElement("To get started, edit"))
-        <code> (ReasonReact.stringToElement(" src/App.re ")) </code>
-        (ReasonReact.stringToElement("and save to reload."))
-      </p>
       <Tile title="First Item" />
       <Footer />
     </div>
