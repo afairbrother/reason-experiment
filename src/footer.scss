@@ -1,0 +1,30 @@
+@import './shared.scss';
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    border-top: 1px solid $light-gray;
+
+    h3 {
+        color: $brand-primary;
+        padding-bottom: 10px;
+        font: {
+            family: $font-display;
+            size: 24px;
+        }
+    }
+
+    p {
+        line-height: 1.5;
+        font: {
+            family: $font-copy;
+        }
+    }
+
+    div {
+        width: 30%;
+        text-align: left;
+    }
+}
