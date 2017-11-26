@@ -4,12 +4,12 @@
 
 let component = ReasonReact.statelessComponent("App");
 
-let make = (~message, _children) => {
+let make = ( _children) => {
   ...component,
   render: (_self) =>
     <div className="App">
         <Header />
-      <Tile title="First Item" />
-      <Footer />
+        <Tiles />
+        <Footer />
     </div>
 };
