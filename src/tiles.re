@@ -11,6 +11,18 @@ type state = {
     drinks: list(drink)
 };
 
+module DrinkItem = {
+    let component = ReasonReact.statelessComponent("DrinkItem");
+    let make = (~drink, _children) => {
+        ...component,
+        render: (self) => {
+            <div className="drink">
+                <h3>(ReasonReact.stringToElement(drink.name))</h3>
+            </div>
+        }
+    }
+};
+
 let component = ReasonReact.reducerComponent("Tile");
 
 let make = ( _children) => {
@@ -26,7 +38,11 @@ let make = ( _children) => {
     },
     reducer: ((), _) => ReasonReact.NoUpdate,
     render: ({state: {drinks}}) =>
-    <div className="tile">
-        <h3>(ReasonReact.stringToElement("initial state"))</h3>
+    <div className="tiles">
+        (
+            ReasonReact.arrayToElement(Array.of_list(
+                List.map((drink) => <DrinkItem drink />, drinks)
+            ))
+        )
     </div>
-}
+};
